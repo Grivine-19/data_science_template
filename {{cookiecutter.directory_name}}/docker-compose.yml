@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  api:
+    #image: 'clv_api:latest${TAG}'
+    env_file:
+      - .env
+    container_name: your_api_name_here
+    restart: always
+    build:
+      context: ./
+    volumes:
+      - .:/home/project/app:rw
+    expose:
+      - "8000"
+    ports:
+      - "8000:8000"
