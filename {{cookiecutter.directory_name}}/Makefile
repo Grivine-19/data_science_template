@@ -1,6 +1,9 @@
 .PHONY: notebook docs
 .EXPORT_ALL_VARIABLES:
 
+import requirements: #from an existing requirements.txt to poetry
+	cat requirements.txt | xargs poetry add
+
 install: 
 	@echo "Installing..."
 	poetry install
